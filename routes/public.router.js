@@ -58,6 +58,7 @@ router.post("/register", async (req, res) => {
       username: username,
       email: email,
       password: password,
+      role: 'user',
     });
     let sessionData = {
       id: newStaff.id,
