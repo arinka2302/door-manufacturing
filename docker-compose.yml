@@ -24,7 +24,6 @@ services:
     container_name: express
     restart: always
     environment:
-      - NODE_ENV=prod
       - DB_HOST=db
     ports:
       - "80:80"
