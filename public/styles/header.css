@@ -1,0 +1,143 @@
+header {
+  border-bottom: 3px solid var(--blue);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1615px;
+  margin: 0 auto;
+  padding: 20px 85px;
+  flex-wrap: wrap;
+}
+
+.header-menu {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0;
+  width: auto;
+}
+
+.header-menu a {
+  font-weight: 700;
+  color: var(--red);
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.burger-menu {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  color: var(--black);
+  order: 2;
+}
+
+@media (max-width: 1000px) {
+  .header-container {
+    padding: 15px 30px;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .logo img {
+    max-width: 180px;
+    margin-right: 0;
+  }
+
+  .header-menu {
+    gap: 20px;
+    font-size: 16px;
+    flex-grow: 1;
+    justify-content: center;
+    order: 2;
+    margin-top: 0;
+  }
+
+  .profile {
+    width: auto;
+    margin-left: 0;
+    order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px 20px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block !important;
+  }
+
+  .logo {
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .logo img {
+    max-width: 130px;
+  }
+
+  .profile {
+    order: 3;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  .header-menu.is-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 113px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 15px;
+    align-items: center;
+    z-index: 100;
+  }
+
+  .header-menu a {
+    font-size: 16px;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 10px 15px;
+  }
+
+  .profile p {
+    font-size: 0.9em;
+  }
+
+  .header-menu.is-open {
+    padding: 15px;
+  }
+}

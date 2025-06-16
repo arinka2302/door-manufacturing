@@ -1,0 +1,229 @@
+/* Переменные (предполагается, что они определены в style.css или другом общем файле) */
+/* :root {
+  --blue-dark: #1C2D46;
+  --red: #D7282F;
+  --black: #000000;
+  --gray: #9b9b9b;
+  --gray-light: #f0f0f0;
+  --font-serif: "Montserrat", sans-serif;
+  --font-sans: "Geologica", sans-serif;
+  --orange: #ff9f2d;
+  --orange-light: #ff961b1a;
+  --green: #00ba34;
+  --green-light: #00ba341a;
+  --blue: #0085ff;
+  --blue-light: #0085ff1a;
+  --red-light: #ff3b3b1a;
+}
+*/
+
+.report-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #ffffff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.report-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.report-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  border-radius: 8px;
+}
+
+.report-header,
+.report-item {
+  padding: 15px 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.report-header {
+  background-color: var(--blue-dark);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 0.5px;
+  white-space: normal;
+}
+
+.report-header:first-child {
+  border-top-left-radius: 8px;
+}
+.report-header:last-child {
+  border-top-right-radius: 8px;
+}
+
+.report-item {
+  background-color: var(--gray-light);
+  color: var(--black);
+  font-size: 1.1em;
+  font-weight: 500;
+  min-height: 50px;
+}
+
+.event {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: normal;
+}
+
+.blue.event {
+  background-color: var(--blue-light);
+  color: var(--blue);
+}
+
+.orange.event {
+  background-color: var(--orange-light);
+  color: var(--orange);
+}
+
+.red.event {
+  background-color: var(--red-light);
+  color: var(--red);
+}
+
+.green.event {
+  background-color: var(--green-light);
+  color: var(--green);
+}
+
+@media (max-width: 992px) {
+  .report-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .report-header,
+  .report-item {
+    border-radius: 0;
+  }
+  .report-header:nth-child(odd) {
+    border-top-left-radius: 8px;
+  }
+  .report-header:nth-child(even) {
+    border-top-right-radius: 8px;
+  }
+
+  .report-item:nth-child(2n + 1):last-child:not(:nth-child(2n + 2)) {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .report-item:nth-child(2n + 2):last-child {
+    border-bottom-right-radius: 8px;
+  }
+  .report-item:nth-last-child(2):nth-child(odd) ~ .report-item:last-child {
+    border-bottom-right-radius: 8px;
+  }
+  .report-item:nth-last-child(1),
+  .report-item:nth-last-child(2):nth-child(2n + 1) {
+    border-bottom-left-radius: 8px;
+  }
+  .report-item:nth-last-child(1),
+  .report-item:nth-last-child(2):nth-child(2n) {
+    border-bottom-right-radius: 8px;
+  }
+  .report-item:nth-child(odd):last-of-type {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .report-item:nth-child(even):last-of-type {
+    border-bottom-right-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .report-container {
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+  .report-content {
+    padding: 20px;
+  }
+
+  .report-info {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    overflow-x: visible;
+  }
+
+  .report-header,
+  .report-item {
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 8px !important;
+    white-space: normal;
+  }
+
+  .report-header {
+    background-color: var(--blue-dark);
+    color: white;
+  }
+
+  .report-item::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--black);
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+
+  .report-item .event {
+    flex-grow: 1;
+    text-align: right;
+    font-size: 1em;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .report-container {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+  .report-content {
+    padding: 15px;
+    gap: 15px;
+  }
+  .report-title {
+    margin-bottom: 15px;
+  }
+  .report-header,
+  .report-item {
+    padding: 8px 10px;
+    font-size: 0.85em;
+  }
+}

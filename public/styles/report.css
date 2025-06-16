@@ -1,0 +1,49 @@
+.report-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.report-title {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.report-info {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(50px, 1fr));
+  width: 100%;
+}
+
+.report-header {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-calendar);
+}
+
+.report-item {
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gray);
+}
+
+.column:not(:nth-child(4n + 1)),
+.column:not(:nth-child(4n + 1)) {
+  border-left: none;
+}
+
+.column:not(:nth-last-child(-n + 4)),
+.column:not(:nth-last-child(-n + 4)) {
+  border-bottom: none;
+}

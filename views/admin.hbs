@@ -1,0 +1,378 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/admin.css" />
+    <title>Админ панель</title>
+    <link rel="icon" href="/images/logo.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="/"><img src="/images/logo.webp" /></a>
+        </div>
+        <button class="burger-menu" id="burger-btn">&#9776;</button>
+        <nav class="header-menu" id="header-menu">
+          <a href="/">
+            <h3>Главная</h3>
+          </a>
+          <a href="/orders">
+            <h3>Заказы</h3>
+          </a>
+          <a href="/courses">
+            <h3>Обучение</h3>
+          </a>
+        </nav>
+        <div class="profile">
+          <a href="/profile"><img src="/images/user.png" /></a>
+          <p>{{user.username}}</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="admin-container margin">
+        <div class="admin-content">
+          <div class="admin-title">
+            <h2>Админ панель</h2>
+            <h4>
+              Информация о существующих записях в базе данных с возможностью
+              редактирования
+            </h4>
+          </div>
+          <div class="admin-table">
+            <div class="admin-table-header admin-table-header-staffs">
+              <div class="admin-header">Имя</div>
+              <div class="admin-header">Фамилия</div>
+              <div class="admin-header">Отчество</div>
+              <div class="admin-header">Имя пользователя</div>
+              <div class="admin-header">Email</div>
+              <div class="admin-header">Создан</div>
+              <div class="admin-header">Удален</div>
+              <div class="admin-header">Действия</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each staffs}}
+                <div class="admin-table-row admin-table-row-staffs">
+                  <div class="admin-item" data-label="Имя:">
+                    {{this.firstName}}
+                  </div>
+                  <div class="admin-item" data-label="Фамилия:">
+                    {{this.lastName}}
+                  </div>
+                  <div class="admin-item" data-label="Отчество:">
+                    {{this.middleName}}
+                  </div>
+                  <div class="admin-item" data-label="Имя пользователя:">
+                    {{this.username}}
+                  </div>
+                  <div class="admin-item" data-label="Email:">
+                    {{this.email}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.created_at}}
+                  </div>
+                  <div class="admin-item" data-label="Удален:">
+                    {{this.deleted_at}}
+                  </div>
+                  <div class="admin-item admin-actions" data-label="Действия:">
+                    <form action="/staffs/{{this.id}}" method="post">
+                      <button class="delete-btn">
+                        <img src="/images/delete.png" alt="Удалить" />
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class="admin-table">
+            <div class="admin-table-header admin-table-header-courses">
+              <div class="admin-header">Название курса</div>
+              <div class="admin-header">Описание</div>
+              <div class="admin-header">Продолжительность</div>
+              <div class="admin-header">Стоимость</div>
+              <div class="admin-header">Создан</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each courses}}
+                <div class="admin-table-row admin-table-row-courses">
+                  <div class="admin-item" data-label="Название курса:">
+                    {{this.name}}
+                  </div>
+                  <div class="admin-item" data-label="Описание курса:">
+                    {{this.description}}
+                  </div>
+                  <div class="admin-item" data-label="Продолжительность:">
+                    {{this.duration}}
+                  </div>
+                  <div class="admin-item" data-label="Стоимость:">
+                    {{this.price}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.created_at}}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class="admin-table">
+            <div class="admin-table-header admin-table-header-records">
+              <div class="admin-header">staff_id</div>
+              <div class="admin-header">course_id</div>
+              <div class="admin-header">Создан</div>
+              <div class="admin-header">Обновлен</div>
+              <div class="admin-header">Удален</div>
+              <div class="admin-header">Действия</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each records}}
+                <div class="admin-table-row admin-table-row-records">
+                  <div class="admin-item" data-label="Название курса:">
+                    {{this.staff_id}}
+                  </div>
+                  <div class="admin-item" data-label="Описание курса:">
+                    {{this.course_id}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.created_at}}
+                  </div>
+                  <div class="admin-item" data-label="Обновлен:">
+                    {{this.updated_at}}
+                  </div>
+                  <div class="admin-item" data-label="Удален:">
+                    {{this.deleted_at}}
+                  </div>
+                  <div class="admin-item admin-actions" data-label="Действия:">
+                    <form action="/record/{{this.course_id}}/delete" method="post">
+                        <button class="edit-quantity-materials">
+                            <img src="/images/delete.png" alt="Удалить" />
+                        </button>
+                    </form>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        <div class="admin-table">
+            <div class="admin-table-header admin-table-header-materials">
+              <div class="admin-header">Наименование</div>
+              <div class="admin-header">supplier_id</div>
+              <div class="admin-header">Количество</div>
+              <div class="admin-header">Цена за единицу</div>
+              <div class="admin-header">Единица измерения</div>
+              <div class="admin-header">Создан</div>
+              <div class="admin-header">Действия</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each materials}}
+                <div class="admin-table-row admin-table-row-materials">
+                  <div class="admin-item" data-label="Наименование:">
+                    {{this.name}}
+                  </div>
+                  <div class="admin-item" data-label="supplier_id:">
+                    {{this.supplier_id}}
+                  </div>
+                  <div class="admin-item" data-label="Количество:">
+                    <span class="material-quantity-display">{{this.quantity}}</span>
+                    <form action="/materials/edit" method="post" class="update-quantity-form" style="display: none;">
+                        <input type="hidden" name="materialId" value="{{this.id}}">
+                        <input type="number" name="newQuantity" class="material-quantity-input" value="{{this.quantity}}" min="0" required>
+                    </form>
+                  </div>
+                  <div class="admin-item" data-label="Цена за единицу:">
+                    {{this.unit_price}}
+                  </div>
+                  <div class="admin-item" data-label="Единица измерения:">
+                    {{this.unit}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.created_at}}
+                  </div>
+                  <div class="admin-item admin-actions" data-label="Действия:">
+                    <button class="edit-quantity-materials" data-material-id="{{this.id}}" data-current-quantity="{{this.quantity}}">
+                        <img src="/images/edit.png" alt="Редактировать" />
+                    </button>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class="admin-table">
+            <div class="admin-table-header admin-table-header-supliers">
+              <div class="admin-header">Наименование</div>
+              <div class="admin-header">Адрес</div>
+              <div class="admin-header">Телефон</div>
+              <div class="admin-header">Создан</div>
+              <div class="admin-header">Удален</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each suppliers}}
+                <div class="admin-table-row admin-table-row-supliers">
+                  <div class="admin-item" data-label="Название:">
+                    {{this.name}}
+                  </div>
+                  <div class="admin-item" data-label="Адрес:">
+                    {{this.address}}
+                  </div>
+                  <div class="admin-item" data-label="Телефон:">
+                    {{this.phone}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.created_at}}
+                  </div>
+                  <div class="admin-item" data-label="Удален:">
+                    {{this.deleted_at}}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class="admin-table">
+            <div class="admin-table-header admin-table-header-orders">
+              <div class="admin-header">staff_id</div>
+              <div class="admin-header">Статус</div>
+              <div class="admin-header">Комментарий</div>
+              <div class="admin-header">Создан</div>
+              <div class="admin-header">Обновлен</div>
+              <div class="admin-header">Удален</div>
+              <div class="admin-header">Действия</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each orders}}
+                <div class="admin-table-row admin-table-row-orders">
+                  <div class="admin-item" data-label="staff_id:">
+                    {{this.staff_id}}
+                  </div>
+                  <div class="admin-item" data-label="Статус:">
+                    {{#ifEquals this.status "paid"}}
+                        Оплачено
+                    {{/ifEquals}}
+                    {{#ifEquals this.status "production"}}
+                        В производстве
+                    {{/ifEquals}}
+                    {{#ifEquals this.status "received"}}
+                        Получен
+                    {{/ifEquals}}
+                    {{#ifEquals this.status "cancelled"}}
+                        Отменен
+                    {{/ifEquals}}
+                  </div>
+                  <div class="admin-item" data-label="Комментарий:">
+                    {{this.comment}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.created_at}}
+                  </div>
+                  <div class="admin-item" data-label="Обновлен:">
+                    {{this.updated_at}}
+                  </div>
+                  <div class="admin-item" data-label="Удален:">
+                    {{this.deleted_at}}
+                  </div>
+                  <div class="admin-item admin-actions" data-label="Действия:">
+                    <form action="/orders/{{this.id}}/delete" method="post">
+                        <button class="edit-quantity-materials">
+                            <img src="/images/delete.png" alt="Удалить" />
+                        </button>
+                    </form>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class="admin-table">
+            <div class="admin-table-header admin-table-header-doors">
+              <div class="admin-header">Название</div>
+              <div class="admin-header">Описание</div>
+              <div class="admin-header">material_id</div>
+              <div class="admin-header">Ширина</div>
+              <div class="admin-header">Высота</div>
+              <div class="admin-header">Толщина</div>
+              <div class="admin-header">Стоимость</div>
+              <div class="admin-header">Цвет</div>
+              <div class="admin-header">Количество</div>
+              <div class="admin-header">Гарантия</div>
+              <div class="admin-header">Создан</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each doors}}
+                <div class="admin-table-row admin-table-row-doors">
+                  <div class="admin-item" data-label="Название:">
+                    {{this.name}}
+                  </div>
+                  <div class="admin-item" data-label="Описание:">
+                    {{this.description}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.material_id}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.width}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.height}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.thickness}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.price}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.color}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.quantity}}
+                  </div>
+                  <div class="admin-item" data-label="">
+                    {{this.guarantee}}
+                  </div>
+                  <div class="admin-item" data-label="Создан:">
+                    {{this.created_at}}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+          <div class="admin-table">
+            <div class="admin-table-header admin-table-header-orderdoors">
+              <div class="admin-header">order_id</div>
+              <div class="admin-header">door_id</div>
+              <div class="admin-header">Количество</div>
+            </div>
+            <div class="admin-table-body">
+              {{#each orderdoors}}
+                <div class="admin-table-row admin-table-row-orderdoors">
+                  <div class="admin-item" data-label="order_id:">
+                    {{this.order_id}}
+                  </div>
+                  <div class="admin-item" data-label="door_id:">
+                    {{this.door_id}}
+                  </div>
+                  <div class="admin-item" data-label="Количество:">
+                    {{this.quantity}}
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="/scripts/edit-materials.js"></script>
+  <script src="/scripts/burger.js"></script>
+</html>

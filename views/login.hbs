@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/auth.css" />
+    <title>Авторизация</title>
+    <link rel="icon" href="/images/logo.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <main>
+      <div class="auth-container">
+        <div class="auth-form">
+          <h3>Вход в аккаунт</h3>
+          <form action="/login" method="post">
+            <input type="email" placeholder="Email" name="email" required />
+            <input
+              type="password"
+              placeholder="Пароль"
+              name="password"
+              required
+            />
+            <a href="#" class="forgot-password">Забыли пароль?</a>
+            <button type="submit">Войти</button>
+          </form>
+          <a href="/register">Зарегистрироваться</a>
+        </div>
+        <img src="/images/auth.png" class="login-img" />
+      </div>
+    </main>
+  </body>
+</html>

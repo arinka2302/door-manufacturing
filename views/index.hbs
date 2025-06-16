@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/reset.css">
+  <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <title>Железный Феликс</title>
+  <link rel="icon" href="/images/logo.webp" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <a href="/"><img src="/images/logo.webp"></a>
+    </div>
+    <button class="burger-menu" id="burger-btn">&#9776;</button>
+    <nav class="header-menu" id="header-menu">
+      <a href="/">
+        <h3>Главная</h3>
+      </a>
+      <a href="/orders">
+        <h3>Заказы</h3>
+      </a>
+      <a href="/courses">
+        <h3>Обучение</h3>
+      </a>
+    </nav>
+    <div class="profile">
+      <a href="/profile"><img src="/images/user.png"></a>
+      <p>{{user.username}}</p>
+    </div>
+  </div>
+</header>
+  <main>
+    <div class="main-container margin">
+      <div class="main-title">
+        <h2>Календарь событий</h2>
+        <h4>Октябрь, 2024</h4>
+      </div>
+      <div class="event-calendar">
+        <div class="day-week">ПН</div>
+        <div class="day-week">ВТ</div>
+        <div class="day-week">СР</div>
+        <div class="day-week">ЧТ</div>
+        <div class="day-week">ПТ</div>
+        <div class="day-week">СБ</div>
+        <div class="day-week">ВС</div>
+        <div class="day"><span></span>
+        </div>
+        <div class="day"><span>1</span>
+          <div class="event blue">Открытие месяца обучения</div>
+          <div class="event orange">Анонс курсов</div>
+        </div>
+        <div class="day"><span>2</span>
+        </div>
+        <div class="day"><span>3</span>
+          <div class="event green">Практический семинар</div>
+        </div>
+        <div class="day"><span>4</span>
+        </div>
+        <div class="day"><span>5</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>6</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>7</span>
+          <div class="event blue">Вебинар по безопасности</div>
+          <div class="event orange">Собрание</div>
+        </div>
+        <div class="day"><span>8</span>
+        </div>
+        <div class="day"><span>9</span>
+          <div class="event blue">Соревнование</div>
+        </div>
+        <div class="day"><span>10</span>
+          <div class="event orange">Собрание</div>
+        </div>
+        <div class="day"><span>11</span>
+        </div>
+        <div class="day"><span>12</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>13</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>14</span>
+          <div class="event blue">Обсуждение предложений</div>
+        </div>
+        <div class="day"><span>15</span>
+        </div>
+        <div class="day"><span>16</span>
+          <div class="event green">Экологический день</div>
+        </div>
+        <div class="day"><span>17</span>
+        </div>
+        <div class="day"><span>18</span>
+          <div class="event blue">Вебинар по безопасности</div>
+        </div>
+        <div class="day"><span>19</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>20</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>21</span>
+          <div class="event green">Практический семинар</div>
+        </div>
+        <div class="day"><span>22</span>
+        </div>
+        <div class="day"><span>23</span>
+        </div>
+        <div class="day"><span>24</span>
+          <div class="event blue">Обсуждение предложений</div>
+        </div>
+        <div class="day"><span>25</span>
+        </div>
+        <div class="day"><span>26</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>27</span>
+          <div class="event orange">Выходной</div>
+        </div>
+        <div class="day"><span>28</span>
+          <div class="event green">Экологический день</div>
+        </div>
+        <div class="day"><span>29</span>
+        </div>
+        <div class="day"><span>30</span>
+          <div class="event green">Практический семинар</div>
+        </div>
+        <div class="day"><span>31</span>
+        </div>
+      </div>
+    </div>
+    <div class="main-container margin">
+      <div class="main-title">
+        <h2>Новости</h2>
+        <h4>15 Сентября 2024</h4>
+      </div>
+      <div class="news">
+        <div class="news-item news-image1">
+          <div class="news-content">
+            <h5>Запуск новой линии производства</h5>
+            <p>Мы рады сообщить, что в нашем заводе недавно открылась новая линия по производству eco-friendly дверей.
+              Эта инициатива направлена на сокращение воздействия на окружающую среду и улучшение качества нашей
+              продукции.</p>
+          </div>
+        </div>
+        <div class="news-item news-image2">
+          <div class="news-content">
+            <h5>Обновление модельного ряда</h5>
+            <p>В этом месяце мы представляем обновленный модельный ряд дверей. В новые коллекции вошли уникальные
+              дизайны и современные функциональные решения, которые удовлетворят даже самых требовательных клиентов.</p>
+          </div>
+        </div>
+        <div class="news-item news-image3">
+          <div class="news-content">
+            <h5>Участие в международной выставке</h5>
+            <p>Мы с гордостью сообщаем о нашем участии в международной выставке строительных материалов, которая пройдет
+              в следующем месяце.</p>
+          </div>
+        </div>
+        <div class="news-item news-image4">
+          <div class="news-content">
+            <h5>Корпоративное обучение для сотрудников</h5>
+            <p>Рады анонсировать начало программы корпоративного обучения для всех сотрудников. Занятия будут посвящены
+              современным методам производства и улучшению качества продукции.</p>
+          </div>
+        </div>
+        <div class="news-item news-image5">
+          <div class="news-content">
+            <h5>Поддержка благотворительных инициатив</h5>
+            <p>Мы запустили новую программу поддержки местных благотворительных проектов, направленную на помощь семьям
+              в трудной жизненной ситуации.</p>
+          </div>
+        </div>
+        <div class="news-item news-image6">
+          <div class="news-content">
+            <h5>Внедрение новых технологий</h5>
+            <p>Наша компания активно работает над внедрением новых технологий в процесс производства. На горизонте
+              внедрение автоматизации, что позволит существенно повысить эффективность и качество продукции.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <h2 class="margin" style="margin-top: 20px;">Контактная информация</h2>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-contact">
+        <h3>Железный Феликс</h3>
+        <a href="tel:+7(3532)44-13-78">Телефон:<br>
+          <h4>+7(3532)44-13-78</h4>
+        </a>
+        <a href="mailto:oren458008@gmail.com">E-mail:<br>
+          <h4>oren458008@gmail.com</h4>
+        </a>
+        <div class="socials">
+          <a href="vk.com" class="vk"><img src="/images/vk.png"></a>
+          <a href="youtube.com" class="youtube"><img src="/images/youtube.png"></a>
+          <a href="web.telegram.org" class="tg"><img src="/images/tg.png"></a>
+        </div>
+        <div class="menu-list">
+          <a href="/">Главная</a>
+          <a href="/">Заказы</a>
+        </div>
+        <div class="menu-list">
+          <a href="/">Обучение</a>
+          <a href="/">Контакты</a>
+        </div>
+      </div>
+      <hr style="width: 100vw;">
+      <div class="footer-info">
+        <a href="#">© Железный Феликс 2000-2023. Все права защищены</a>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </div>
+  </div>
+</body>
+<script src="/scripts/burger.js"></script>
+</html>

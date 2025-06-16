@@ -1,0 +1,87 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/orders.css" />
+    <title>Редактирование: {{title}}</title>
+    <link rel="icon" href="/images/logo.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="/"><img src="/images/logo.webp" /></a>
+        </div>
+        <button class="burger-menu" id="burger-btn">&#9776;</button>
+        <nav class="header-menu" id="header-menu">
+          <a href="/">
+            <h3>Главная</h3>
+          </a>
+          <a href="/orders">
+            <h3>Заказы</h3>
+          </a>
+          <a href="/courses">
+            <h3>Обучение</h3>
+          </a>
+        </nav>
+        <div class="profile">
+          <a href="/profile"><img src="/images/user.png" /></a>
+          <p>{{user.username}}</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="orders-container margin">
+        <div class="orders-content">
+          <div class="orders-title">
+            <h2>Редактирование заказа</h2>
+            <h4>Номер заказа: {{order.id}}</h4>
+          </div>
+          <form
+            action="/orders/{{order.id}}/edit"
+            method="post"
+            class="form-edit"
+          >
+            <div class="form-edit-item">
+              <label>Новый статус заказа</label>
+              <select name="status" required>
+                <option value="paid">Оплачено</option>
+                <option value="production">В производстве</option>
+                <option value="received">Получен</option>
+                <option value="cancelled">Отменен</option>
+              </select>
+            </div>
+            <div class="form-edit-item">
+              <label>Новый комментарий к заказу</label>
+              <textarea
+                name="comment"
+                placeholder="Напишите комментарий к заказу"
+              >{{order.comment}}</textarea>
+            </div>
+            <div class="form-edit-item">
+              <label>Количество дверей в заказе</label>
+              <input
+                type="number"
+                name="quantity"
+                value="{{quantity}}"
+                placeholder="Выберите количество дверей"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-red btn-edit">Сохранить изменения</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="/scripts/burger.js"></script>
+</html>

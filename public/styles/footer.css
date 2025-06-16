@@ -1,0 +1,157 @@
+footer {
+  margin-top: 50px;
+  background-image: url("../images/footer.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+footer,
+.footer-contact h3,
+.footer-contact .menu-list a {
+  color: white;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 100px 85px;
+}
+
+.footer-contact a,
+.footer-info a {
+  font-size: 14px;
+  font-weight: 300;
+  color: #b6b6b6;
+}
+
+.footer-contact h4 {
+  font-weight: 700;
+  color: white;
+  margin-top: 8px;
+}
+
+.socials {
+  display: flex;
+}
+
+.socials a {
+  margin-left: -12px;
+}
+
+.vk {
+  z-index: 3;
+}
+
+.youtube {
+  z-index: 2;
+}
+
+.tg {
+  z-index: 1;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1800px;
+  padding: 100px 85px 80px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .footer-contact {
+    padding: 80px 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .footer-contact > * {
+    flex-basis: 45%;
+    text-align: center;
+  }
+
+  .footer-contact h3,
+  .footer-contact a,
+  .footer-contact h4 {
+    text-align: center;
+  }
+
+  .socials {
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .menu-list {
+    align-items: center;
+  }
+
+  .footer-info {
+    padding: 80px 40px 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-contact {
+    padding: 60px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .footer-contact > * {
+    flex-basis: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .socials {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .footer-info {
+    padding: 60px 20px 40px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-contact {
+    padding: 40px 15px;
+    gap: 20px;
+  }
+
+  .footer-contact h3 {
+    font-size: 20px;
+  }
+
+  .footer-contact a,
+  .footer-info a {
+    font-size: 12px;
+  }
+
+  .footer-contact h4 {
+    font-size: 14px;
+  }
+
+  .footer-info {
+    padding: 40px 15px 30px;
+  }
+}

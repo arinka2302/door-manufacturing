@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/report.css" />
+    <link rel="stylesheet" href="/styles/orders-report.css" />
+    <title>Отчетность</title>
+    <link rel="icon" href="/images/logo.webp" type="image/x-icon" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="/"><img src="/images/logo.webp" /></a>
+        </div>
+        <button class="burger-menu" id="burger-btn">&#9776;</button>
+        <nav class="header-menu" id="header-menu">
+          <a href="/">
+            <h3>Главная</h3>
+          </a>
+          <a href="/orders">
+            <h3>Заказы</h3>
+          </a>
+          <a href="/courses">
+            <h3>Обучение</h3>
+          </a>
+        </nav>
+        <div class="profile">
+          <a href="/profile"><img src="/images/user.png" /></a>
+          <p>{{user.username}}</p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="report-container margin">
+        <div class="report-content">
+          <div class="report-title">
+            <h2>Отчетность</h2>
+            <h4>Информация о работе сотрудника</h4>
+          </div>
+          <div class="report-info">
+            <div class="report-header column">КОЛИЧЕСТВО ЗАКАЗОВ</div>
+            <div class="report-header column">КОЛИЧЕСТВО УСПЕШНЫХ ЗАКАЗОВ</div>
+            <div class="report-header column">КОЛИЧЕСТВО ОТМЕНЕННЫХ ЗАКАЗОВ</div>
+            <div class="report-header column">ОБЩАЯ СУММА ЗАКАЗОВ</div>
+            <div class="report-item column" data-label="Количество заказов:">
+              <div class="blue event">{{totalOrders}}</div>
+            </div>
+            <div class="report-item column" data-label="Успешные заказы:">
+              <div class="orange event">{{successfulOrders}}</div>
+            </div>
+            <div class="report-item column" data-label="Отмененные заказы:">
+              <div class="red event">{{cancelfulOrders}}</div>
+            </div>
+            <div class="report-item column" data-label="Общая сумма заказов:">
+              <div class="green event">{{totalRevenue}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="/scripts/burger.js"></script>
+</html>

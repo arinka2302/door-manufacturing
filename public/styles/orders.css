@@ -1,0 +1,313 @@
+.orders-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.orders-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+}
+
+.orders-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+  gap: 8px;
+}
+
+.orders-header form {
+  display: flex;
+  gap: 8px;
+  max-width: 100%;
+  width: 100%;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid var(--gray);
+  padding: 8px 0px 10px 15px;
+  width: 100%;
+}
+
+textarea {
+  border-radius: 10px;
+}
+
+.btn-blue {
+  background-color: var(--blue-dark);
+  padding: 12px 30px;
+  color: white;
+  border-radius: 10px;
+}
+
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  width: 100%;
+  column-gap: 80px;
+  row-gap: 55px;
+  margin-bottom: 100px;
+}
+
+.orders-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--gray-order);
+  padding: 8px 20px 35px 20px;
+  border-radius: 20px;
+  gap: 15px;
+}
+
+.orders-grid-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 100%;
+}
+
+.orders-image {
+  width: 136px;
+}
+
+.orders-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  word-wrap: break-word;
+  height: 100%;
+}
+
+.orders-title .orders-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity {
+  color: var(--black);
+}
+
+.price {
+  color: var(--black);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.orders-info,
+.price {
+  width: 100%;
+}
+
+.comment {
+  margin-top: 10px;
+}
+
+.form-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 55%;
+  min-width: 300px;
+}
+
+.form-edit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.btn-edit {
+  font-weight: 500;
+  font-size: 18px;
+  padding: 12px 15px;
+  margin-top: 15px;
+}
+
+#door-img {
+  width: 50%;
+}
+
+.orders-add {
+  margin-bottom: 100px;
+}
+
+.orders-custom-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 1200px) {
+  .orders-grid {
+    column-gap: 40px;
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  #orders-add-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .orders-content {
+    width: fit-content;
+  }
+
+  .orders-grid {
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+
+  .orders-container {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+
+  .orders-header {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .orders-header form {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .btn-blue {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  input,
+  select,
+  textarea {
+    padding: 10px 15px;
+    font-size: 15px;
+  }
+
+  .orders-image {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .orders-grid {
+    grid-template-columns: repeat(1, minmax(50px, 1fr));
+    row-gap: 25px;
+  }
+
+  .orders-container {
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+
+  .orders-header {
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .orders-header form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-blue {
+    width: 100%;
+    text-align: center;
+  }
+
+  .orders-grid-item {
+    padding: 15px 15px 25px 15px;
+  }
+
+  .orders-image {
+    width: 120px;
+  }
+
+  .orders-title h5 {
+    font-size: 1.1em;
+  }
+
+  .orders-title small {
+    font-size: 0.9em;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .orders-container {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .orders-content {
+    gap: 20px;
+  }
+
+  .orders-grid-item {
+    padding: 10px 10px 20px 10px;
+  }
+
+  .orders-image {
+    width: 90px;
+  }
+
+  .orders-title h5 {
+    font-size: 1em;
+  }
+
+  .orders-title small {
+    font-size: 0.85em;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .comment {
+    font-size: 0.85em;
+  }
+}
+
+.event {
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue.event {
+  background-color: var(--blue-light);
+  color: var(--blue);
+}
+
+.orange.event {
+  background-color: var(--orange-light);
+  color: var(--orange);
+}
+
+.red.event {
+  background-color: var(--red-light);
+  color: var(--red);
+}
+
+.green.event {
+  background-color: var(--green-light);
+  color: var(--green);
+}
